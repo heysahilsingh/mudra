@@ -1,0 +1,119 @@
+.icon:before {
+  content: "";
+  display: inline-block;
+  background-color: var(--c-black-10);
+  background-image: url("../../media/icons/default.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: var(--icon-width);
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: var(--border);
+}
+
+/* Category Icons */
+.icon-cat-001:before {
+  background-image: url("../../media/icons/cat-001.png");
+}
+
+.icon-cat-002:before {
+  background-image: url("../../media/icons/cat-002.png");
+}
+
+.icon-cat-003:before {
+  background-image: url("../../media/icons/cat-003.png");
+}
+
+.icon-cat-004:before {
+  background-image: url("../../media/icons/cat-004.png");
+}
+
+.icon-cat-005:before {
+  background-image: url("../../media/icons/cat-005.png");
+}
+
+.icon-cat-006:before {
+  background-image: url("../../media/icons/cat-006.png");
+}
+
+.icon-cat-007:before {
+  background-image: url("../../media/icons/cat-007.png");
+}
+
+.icon-cat-008:before {
+  background-image: url("../../media/icons/cat-008.png");
+}
+
+.icon-cat-009:before {
+  background-image: url("../../media/icons/cat-009.png");
+}
+
+.icon-cat-010:before {
+  background-image: url("../../media/icons/cat-010.png");
+}
+
+.icon-cat-011:before {
+  background-image: url("../../media/icons/cat-011.png");
+}
+
+.icon-cat-012:before {
+  background-image: url("../../media/icons/cat-012.png");
+}
+
+.icon-cat-013:before {
+  background-image: url("../../media/icons/cat-013.png");
+}
+
+.icon-cat-014:before {
+  background-image: url("../../media/icons/cat-014.png");
+}
+
+.icon-cat-015:before {
+  background-image: url("../../media/icons/cat-015.png");
+}
+
+.icon-cat-016:before {
+  background-image: url("../../media/icons/cat-016.png");
+}
+
+.icon-cat-017:before {
+  background-image: url("../../media/icons/cat-017.png");
+}
+
+.icon-cat-018:before {
+  background-image: url("../../media/icons/cat-018.png");
+}
+
+.icon-cat-019:before {
+  background-image: url("../../media/icons/cat-019.png");
+}
+
+.icon-cat-020:before {
+  background-image: url("../../media/icons/cat-020.png");
+}
+
+/* Continue the sequence for the remaining icons */
+
+
+/* Wallet Icons */
+.icon-wallet-001:before {
+  background-image: url("../../media/icons/wallet-001.png");
+}
+
+.icon-wallet-002:before {
+  background-image: url("../../media/icons/wallet-002.png");
+}
+
+.icon-wallet-003:before {
+  background-image: url("../../media/icons/wallet-003.png");
+}
+
+.icon-wallet-004:before {
+  background-image: url("../../media/icons/wallet-004.png");
+}
+
+.icon-wallet-005:before {
+  background-image: url("../../media/icons/wallet-005.png");
+}
