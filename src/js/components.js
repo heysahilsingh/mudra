@@ -43,7 +43,7 @@ export function compTransactionRow(pTransactionType, pTransactionId) {
       });
 
       const transactionRowWrapper = createHTML("div", {
-        class: `transaction-row-wrapper icon icon-${category?.icon}`,
+        class: `transaction-row-wrapper icon ${category?.icon}`,
       });
 
       // Detail-1
@@ -78,7 +78,7 @@ export function compTransactionRow(pTransactionType, pTransactionId) {
       );
       const transactionWallet = createHTML(
         "span",
-        { class: `transaction-wallet icon icon-${wallet?.icon}` },
+        { class: `transaction-wallet icon ${wallet?.icon}` },
         wallet?.name
       );
 

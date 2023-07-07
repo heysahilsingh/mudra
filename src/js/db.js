@@ -12,7 +12,7 @@ export let dbUserDetails = {
 export let dbTransactions = {
   lend: [
     {
-      id: "TRANS_Y3M2S3R0Y4N0V0k41680003988203",
+      id: "TRANS_Y3M2S3R0Y4N0V0k416803988203",
       amount: "2831",
       description: "",
       date: "Sunday 28-June-2023 6:52 AM",
@@ -235,7 +235,7 @@ export let dbCategories = {
       canEdit: false,
       isChild: false,
       parentId: null,
-      icon: "cat-001",
+      icon: "icon-cat-1",
       entryType: "lend",
     },
   ],
@@ -246,7 +246,7 @@ export let dbCategories = {
       canEdit: false,
       isChild: false,
       parentId: null,
-      icon: "cat-002",
+      icon: "icon-cat-2",
       entryType: "borrow",
     },
   ],
@@ -257,7 +257,7 @@ export let dbCategories = {
       canEdit: false,
       isChild: false,
       parentId: null,
-      icon: "cat-003",
+      icon: "icon-cat-3",
       entryType: "expense",
     },
     {
@@ -266,7 +266,7 @@ export let dbCategories = {
       description: "",
       isChild: false,
       parentId: null,
-      icon: "cat-004",
+      icon: "icon-cat-4",
       entryType: "expense",
     },
     {
@@ -275,7 +275,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_s7T9E5d0P8e8L6N31687610425861",
-      icon: "cat-005",
+      icon: "icon-cat-5",
       entryType: "expense",
     },
     {
@@ -284,7 +284,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_s7T9E5d0P8e8L6N31687610425861",
-      icon: "cat-006",
+      icon: "icon-cat-6",
       entryType: "expense",
     },
     {
@@ -293,7 +293,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_s7T9E5d0P8e8L6N31687610425861",
-      icon: "cat-007",
+      icon: "icon-cat-7",
       entryType: "expense",
     },
     {
@@ -302,7 +302,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_s7T9E5d0P8e8L6N31687610425861",
-      icon: "cat-008",
+      icon: "icon-cat-8",
       entryType: "expense",
     },
     {
@@ -311,7 +311,7 @@ export let dbCategories = {
       description: "office expenses",
       isChild: false,
       parentId: null,
-      icon: "cat-009",
+      icon: "icon-cat-9",
       entryType: "expense",
     },
     {
@@ -320,7 +320,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_s4s1Q7t6Y2f5A7S11687610801693",
-      icon: "cat-010",
+      icon: "icon-cat-10",
       entryType: "expense",
     },
     {
@@ -329,7 +329,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_s4s1Q7t6Y2f5A7S11687610801693",
-      icon: "cat-011",
+      icon: "icon-cat-11",
       entryType: "expense",
     },
     {
@@ -338,7 +338,7 @@ export let dbCategories = {
       description: "",
       isChild: false,
       parentId: null,
-      icon: "cat-015",
+      icon: "icon-cat-15",
       entryType: "expense",
     },
   ],
@@ -347,7 +347,7 @@ export let dbCategories = {
       id: "CAT_x6e7s0f3x9D5m2O51687611467734",
       name: "default (income)",
       canEdit: false,
-      icon: "cat-013",
+      icon: "icon-cat-13",
       entryType: "income",
     },
     {
@@ -356,7 +356,7 @@ export let dbCategories = {
       description: "",
       isChild: false,
       parentId: null,
-      icon: "cat-014",
+      icon: "icon-cat-14",
       entryType: "income",
     },
     {
@@ -365,7 +365,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_O9x3s7L2p2q9k7C51687611142474",
-      icon: "cat-015",
+      icon: "icon-cat-15",
       entryType: "income",
     },
     {
@@ -374,7 +374,7 @@ export let dbCategories = {
       description: "",
       isChild: true,
       parentId: "CAT_O9x3s7L2p2q9k7C51687611142474",
-      icon: "cat-016",
+      icon: "icon-cat-16",
       entryType: "income",
     },
     {
@@ -383,7 +383,7 @@ export let dbCategories = {
       description: "Monthly Budget",
       isChild: false,
       parentId: null,
-      icon: "cat-017",
+      icon: "icon-cat-17",
       entryType: "income",
     },
   ],
@@ -393,7 +393,7 @@ export let dbWallets = [
   {
     id: "WALLET_T1c4d0S9h0o4A1E01687609709369",
     name: "cash",
-    icon: "wallet-001",
+    icon: "icon-wallet-1",
     description: "In hand money",
     balance: "201565",
     status: "positive",
@@ -402,7 +402,7 @@ export let dbWallets = [
   {
     id: "WALLET_T1c4d0S9h0o4A1E01687609789369",
     name: "paytm",
-    icon: "wallet-002",
+    icon: "icon-wallet-2",
     description: "Paytm wallet",
     balance: "20156",
     status: "negative",
@@ -411,7 +411,7 @@ export let dbWallets = [
   {
     id: "WALLET_N0A6P3v4S4c1n5g21687609724997",
     name: "phonepe",
-    icon: "wallet-003",
+    icon: "icon-wallet-3",
     description: "",
     balance: "589",
     status: "positive",
@@ -420,7 +420,7 @@ export let dbWallets = [
   {
     id: "WALLET_N0A6P3v4S4c1n5g216876hU624997",
     name: "bank",
-    icon: "wallet-004",
+    icon: "icon-wallet-4",
     description: "",
     balance: "5898",
     status: "negative",

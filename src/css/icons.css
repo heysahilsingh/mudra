@@ -2,7 +2,7 @@
   content: "";
   display: inline-block;
   background-color: var(--c-black-10);
-  background-image: url("../../media/icons/default.png");
+  background-image: url("../../media/icons/icon-default.png");
   background-repeat: no-repeat;
   background-size: cover;
   min-width: var(--icon-width);
@@ -14,106 +14,441 @@
 }
 
 /* Category Icons */
-.icon-cat-001:before {
-  background-image: url("../../media/icons/cat-001.png");
+.icon-cat-1:before {
+  background-image: url("../../media/icons/icon-cat-1.png");
 }
 
-.icon-cat-002:before {
-  background-image: url("../../media/icons/cat-002.png");
+.icon-cat-2:before {
+  background-image: url("../../media/icons/icon-cat-2.png");
 }
 
-.icon-cat-003:before {
-  background-image: url("../../media/icons/cat-003.png");
+.icon-cat-3:before {
+  background-image: url("../../media/icons/icon-cat-3.png");
 }
 
-.icon-cat-004:before {
-  background-image: url("../../media/icons/cat-004.png");
+.icon-cat-4:before {
+  background-image: url("../../media/icons/icon-cat-4.png");
 }
 
-.icon-cat-005:before {
-  background-image: url("../../media/icons/cat-005.png");
+.icon-cat-5:before {
+  background-image: url("../../media/icons/icon-cat-5.png");
 }
 
-.icon-cat-006:before {
-  background-image: url("../../media/icons/cat-006.png");
+.icon-cat-6:before {
+  background-image: url("../../media/icons/icon-cat-6.png");
 }
 
-.icon-cat-007:before {
-  background-image: url("../../media/icons/cat-007.png");
+.icon-cat-7:before {
+  background-image: url("../../media/icons/icon-cat-7.png");
 }
 
-.icon-cat-008:before {
-  background-image: url("../../media/icons/cat-008.png");
+.icon-cat-8:before {
+  background-image: url("../../media/icons/icon-cat-8.png");
 }
 
-.icon-cat-009:before {
-  background-image: url("../../media/icons/cat-009.png");
+.icon-cat-9:before {
+  background-image: url("../../media/icons/icon-cat-9.png");
 }
 
-.icon-cat-010:before {
-  background-image: url("../../media/icons/cat-010.png");
+.icon-cat-10:before {
+  background-image: url("../../media/icons/icon-cat-10.png");
 }
 
-.icon-cat-011:before {
-  background-image: url("../../media/icons/cat-011.png");
+.icon-cat-11:before {
+  background-image: url("../../media/icons/icon-cat-11.png");
 }
 
-.icon-cat-012:before {
-  background-image: url("../../media/icons/cat-012.png");
+.icon-cat-12:before {
+  background-image: url("../../media/icons/icon-cat-12.png");
 }
 
-.icon-cat-013:before {
-  background-image: url("../../media/icons/cat-013.png");
+.icon-cat-13:before {
+  background-image: url("../../media/icons/icon-cat-13.png");
 }
 
-.icon-cat-014:before {
-  background-image: url("../../media/icons/cat-014.png");
+.icon-cat-14:before {
+  background-image: url("../../media/icons/icon-cat-14.png");
 }
 
-.icon-cat-015:before {
-  background-image: url("../../media/icons/cat-015.png");
+.icon-cat-15:before {
+  background-image: url("../../media/icons/icon-cat-15.png");
 }
 
-.icon-cat-016:before {
-  background-image: url("../../media/icons/cat-016.png");
+.icon-cat-16:before {
+  background-image: url("../../media/icons/icon-cat-16.png");
 }
 
-.icon-cat-017:before {
-  background-image: url("../../media/icons/cat-017.png");
+.icon-cat-17:before {
+  background-image: url("../../media/icons/icon-cat-17.png");
 }
 
-.icon-cat-018:before {
-  background-image: url("../../media/icons/cat-018.png");
+.icon-cat-18:before {
+  background-image: url("../../media/icons/icon-cat-18.png");
 }
 
-.icon-cat-019:before {
-  background-image: url("../../media/icons/cat-019.png");
+.icon-cat-19:before {
+  background-image: url("../../media/icons/icon-cat-19.png");
 }
 
-.icon-cat-020:before {
-  background-image: url("../../media/icons/cat-020.png");
+.icon-cat-20:before {
+  background-image: url("../../media/icons/icon-cat-20.png");
 }
 
-/* Continue the sequence for the remaining icons */
+.icon-cat-21:before {
+  background-image: url("../../media/icons/icon-cat-21.png");
+}
+
+.icon-cat-22:before {
+  background-image: url("../../media/icons/icon-cat-22.png");
+}
+
+.icon-cat-23:before {
+  background-image: url("../../media/icons/icon-cat-23.png");
+}
+
+.icon-cat-24:before {
+  background-image: url("../../media/icons/icon-cat-24.png");
+}
+
+.icon-cat-25:before {
+  background-image: url("../../media/icons/icon-cat-25.png");
+}
+
+.icon-cat-26:before {
+  background-image: url("../../media/icons/icon-cat-26.png");
+}
+
+.icon-cat-27:before {
+  background-image: url("../../media/icons/icon-cat-27.png");
+}
+
+.icon-cat-28:before {
+  background-image: url("../../media/icons/icon-cat-28.png");
+}
+
+.icon-cat-29:before {
+  background-image: url("../../media/icons/icon-cat-29.png");
+}
+
+.icon-cat-30:before {
+  background-image: url("../../media/icons/icon-cat-30.png");
+}
+
+.icon-cat-31:before {
+  background-image: url("../../media/icons/icon-cat-31.png");
+}
+
+.icon-cat-32:before {
+  background-image: url("../../media/icons/icon-cat-32.png");
+}
+
+.icon-cat-33:before {
+  background-image: url("../../media/icons/icon-cat-33.png");
+}
+
+.icon-cat-34:before {
+  background-image: url("../../media/icons/icon-cat-34.png");
+}
+
+.icon-cat-35:before {
+  background-image: url("../../media/icons/icon-cat-35.png");
+}
+
+.icon-cat-36:before {
+  background-image: url("../../media/icons/icon-cat-36.png");
+}
+
+.icon-cat-37:before {
+  background-image: url("../../media/icons/icon-cat-37.png");
+}
+
+.icon-cat-38:before {
+  background-image: url("../../media/icons/icon-cat-38.png");
+}
+
+.icon-cat-39:before {
+  background-image: url("../../media/icons/icon-cat-39.png");
+}
+
+.icon-cat-40:before {
+  background-image: url("../../media/icons/icon-cat-40.png");
+}
+
+.icon-cat-41:before {
+  background-image: url("../../media/icons/icon-cat-41.png");
+}
+
+.icon-cat-42:before {
+  background-image: url("../../media/icons/icon-cat-42.png");
+}
+
+.icon-cat-43:before {
+  background-image: url("../../media/icons/icon-cat-43.png");
+}
+
+.icon-cat-44:before {
+  background-image: url("../../media/icons/icon-cat-44.png");
+}
+
+.icon-cat-45:before {
+  background-image: url("../../media/icons/icon-cat-45.png");
+}
+
+.icon-cat-46:before {
+  background-image: url("../../media/icons/icon-cat-46.png");
+}
+
+.icon-cat-47:before {
+  background-image: url("../../media/icons/icon-cat-47.png");
+}
+
+.icon-cat-48:before {
+  background-image: url("../../media/icons/icon-cat-48.png");
+}
+
+.icon-cat-49:before {
+  background-image: url("../../media/icons/icon-cat-49.png");
+}
+
+.icon-cat-50:before {
+  background-image: url("../../media/icons/icon-cat-50.png");
+}
+
+.icon-cat-51:before {
+  background-image: url("../../media/icons/icon-cat-51.png");
+}
+
+.icon-cat-52:before {
+  background-image: url("../../media/icons/icon-cat-52.png");
+}
+
+.icon-cat-53:before {
+  background-image: url("../../media/icons/icon-cat-53.png");
+}
+
+.icon-cat-54:before {
+  background-image: url("../../media/icons/icon-cat-54.png");
+}
+
+.icon-cat-55:before {
+  background-image: url("../../media/icons/icon-cat-55.png");
+}
+
+.icon-cat-56:before {
+  background-image: url("../../media/icons/icon-cat-56.png");
+}
+
+.icon-cat-57:before {
+  background-image: url("../../media/icons/icon-cat-57.png");
+}
+
+.icon-cat-58:before {
+  background-image: url("../../media/icons/icon-cat-58.png");
+}
+
+.icon-cat-59:before {
+  background-image: url("../../media/icons/icon-cat-59.png");
+}
+
+.icon-cat-60:before {
+  background-image: url("../../media/icons/icon-cat-60.png");
+}
+
+.icon-cat-61:before {
+  background-image: url("../../media/icons/icon-cat-61.png");
+}
+
+.icon-cat-62:before {
+  background-image: url("../../media/icons/icon-cat-62.png");
+}
+
+.icon-cat-63:before {
+  background-image: url("../../media/icons/icon-cat-63.png");
+}
+
+.icon-cat-64:before {
+  background-image: url("../../media/icons/icon-cat-64.png");
+}
+
+.icon-cat-65:before {
+  background-image: url("../../media/icons/icon-cat-65.png");
+}
+
+.icon-cat-66:before {
+  background-image: url("../../media/icons/icon-cat-66.png");
+}
+
+.icon-cat-67:before {
+  background-image: url("../../media/icons/icon-cat-67.png");
+}
+
+.icon-cat-68:before {
+  background-image: url("../../media/icons/icon-cat-68.png");
+}
+
+.icon-cat-69:before {
+  background-image: url("../../media/icons/icon-cat-69.png");
+}
+
+.icon-cat-70:before {
+  background-image: url("../../media/icons/icon-cat-70.png");
+}
+
+.icon-cat-71:before {
+  background-image: url("../../media/icons/icon-cat-71.png");
+}
+
+.icon-cat-72:before {
+  background-image: url("../../media/icons/icon-cat-72.png");
+}
+
+.icon-cat-73:before {
+  background-image: url("../../media/icons/icon-cat-73.png");
+}
+
+.icon-cat-74:before {
+  background-image: url("../../media/icons/icon-cat-74.png");
+}
+
+.icon-cat-75:before {
+  background-image: url("../../media/icons/icon-cat-75.png");
+}
+
+.icon-cat-76:before {
+  background-image: url("../../media/icons/icon-cat-76.png");
+}
+
+.icon-cat-77:before {
+  background-image: url("../../media/icons/icon-cat-77.png");
+}
+
+.icon-cat-78:before {
+  background-image: url("../../media/icons/icon-cat-78.png");
+}
+
+.icon-cat-79:before {
+  background-image: url("../../media/icons/icon-cat-79.png");
+}
+
+.icon-cat-80:before {
+  background-image: url("../../media/icons/icon-cat-80.png");
+}
+
+.icon-cat-81:before {
+  background-image: url("../../media/icons/icon-cat-81.png");
+}
+
+.icon-cat-82:before {
+  background-image: url("../../media/icons/icon-cat-82.png");
+}
+
+.icon-cat-83:before {
+  background-image: url("../../media/icons/icon-cat-83.png");
+}
+
+.icon-cat-84:before {
+  background-image: url("../../media/icons/icon-cat-84.png");
+}
+
+.icon-cat-85:before {
+  background-image: url("../../media/icons/icon-cat-85.png");
+}
+
+.icon-cat-86:before {
+  background-image: url("../../media/icons/icon-cat-86.png");
+}
+
+.icon-cat-87:before {
+  background-image: url("../../media/icons/icon-cat-87.png");
+}
+
+.icon-cat-88:before {
+  background-image: url("../../media/icons/icon-cat-88.png");
+}
+
+.icon-cat-89:before {
+  background-image: url("../../media/icons/icon-cat-89.png");
+}
+
+.icon-cat-90:before {
+  background-image: url("../../media/icons/icon-cat-90.png");
+}
+
+.icon-cat-91:before {
+  background-image: url("../../media/icons/icon-cat-91.png");
+}
+
+.icon-cat-92:before {
+  background-image: url("../../media/icons/icon-cat-92.png");
+}
+
+.icon-cat-93:before {
+  background-image: url("../../media/icons/icon-cat-93.png");
+}
+
+.icon-cat-94:before {
+  background-image: url("../../media/icons/icon-cat-94.png");
+}
+
+.icon-cat-95:before {
+  background-image: url("../../media/icons/icon-cat-95.png");
+}
+
+.icon-cat-96:before {
+  background-image: url("../../media/icons/icon-cat-96.png");
+}
+
+.icon-cat-97:before {
+  background-image: url("../../media/icons/icon-cat-97.png");
+}
+
+.icon-cat-98:before {
+  background-image: url("../../media/icons/icon-cat-98.png");
+}
+
+.icon-cat-99:before {
+  background-image: url("../../media/icons/icon-cat-99.png");
+}
+
+.icon-cat-100:before {
+  background-image: url("../../media/icons/icon-cat-100.png");
+}
+
+.icon-cat-101:before {
+  background-image: url("../../media/icons/icon-cat-101.png");
+}
+
+.icon-cat-102:before {
+  background-image: url("../../media/icons/icon-cat-102.png");
+}
+
+.icon-cat-103:before {
+  background-image: url("../../media/icons/icon-cat-103.png");
+}
+
+.icon-cat-104:before {
+  background-image: url("../../media/icons/icon-cat-104.png");
+}
+
 
 
 /* Wallet Icons */
-.icon-wallet-001:before {
-  background-image: url("../../media/icons/wallet-001.png");
+.icon-wallet-1:before {
+  background-image: url("../../media/icons/icon-wallet-1.png");
 }
 
-.icon-wallet-002:before {
-  background-image: url("../../media/icons/wallet-002.png");
+.icon-wallet-2:before {
+  background-image: url("../../media/icons/icon-wallet-2.png");
 }
 
-.icon-wallet-003:before {
-  background-image: url("../../media/icons/wallet-003.png");
+.icon-wallet-3:before {
+  background-image: url("../../media/icons/icon-wallet-3.png");
 }
 
-.icon-wallet-004:before {
-  background-image: url("../../media/icons/wallet-004.png");
+.icon-wallet-4:before {
+  background-image: url("../../media/icons/icon-wallet-4.png");
 }
 
-.icon-wallet-005:before {
-  background-image: url("../../media/icons/wallet-005.png");
+.icon-wallet-5:before {
+  background-image: url("../../media/icons/icon-wallet-5.png");
 }

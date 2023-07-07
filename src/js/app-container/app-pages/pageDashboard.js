@@ -10,7 +10,7 @@ import {
   popMsg,
   saError
 } from "../../helper.js";
-import { subPageCategoryPicker } from "./sub-pages/subPageCategoryPicker.js";
+import { subPageIconPicker } from "./sub-pages/subPageIconPicker.js";
 import { subPageTransactionHistory } from "./sub-pages/subPageTransactionHistory.js";
 
 export function pageDashboard() {
@@ -153,13 +153,5 @@ export function pageDashboard() {
 }
 
 setTimeout(() => {
-  subPageCategoryPicker({
-    pHeading: "Select Category",
-    pMode: "select",
-    // pSelectMultiple: true,
-    // pPreSelected: ["CAT_s7T9E5d0P8e8L6N31687610425861", "CAT_E8z5O9J9H2X8N7A51687610971944", "CAT_s4s1Q7t6Y2f5A7S11687610801693"],
-    pCallback: () => {
-      console.log("callback runned");
-    },
-  });
+  subPageIconPicker()
 }, 0);

@@ -75,7 +75,7 @@
   gap: calc(var(--body-padding) * 0.5);
 }
 
-/* TRANSACTION HISTORY */
+/* =====================================   SUB PAGE - TRANSACTION HISTORY */
 .sub-page.transactions-history section {
   border-bottom: var(--border-bold);
   padding: var(--body-padding);
@@ -155,7 +155,7 @@
   border-bottom: none !important;
 }
 
-/* DATE PICKER */
+/* =====================================   SUB PAGE - DATE PICKER */
 .sub-page.date-picker li {
   background-color: var(--c-white-100);
   padding: var(--body-padding);
@@ -192,7 +192,7 @@
   color: var(--c-primary-100);
 }
 
-/* CATEGORY PICKER */
+/* =====================================   SUB PAGE - CATEGORY PICKER */
 .sub-page.category-picker .header .edit i {
   font-size: 25px;
 }
@@ -200,6 +200,8 @@
 .sub-page.category-picker .section-tabs {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--body-padding);
   justify-content: space-between;
   background-color: var(--c-primary-100);
   color: white;
@@ -246,6 +248,10 @@
   border-radius: 15px;
 }
 
+.sub-page.category-picker .category i {
+  line-height: 0;
+}
+
 .sub-page.category-picker .category-parent {
   display: flex;
   flex-direction: row-reverse;
@@ -253,6 +259,25 @@
   align-items: center;
   justify-content: start;
   gap: var(--body-padding);
+  position: relative;
+}
+
+.sub-page.category-picker .category-parent.default:after{
+  content: "\ebd3";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--c-black-30);
+  border-radius: 50%;
+  font-family: "Phosphor-Fill" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 .sub-page.category-picker .category-children {
@@ -268,7 +293,7 @@
 
 .sub-page.category-picker .category-child {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   gap: calc(var(--body-padding) * 0.5);
@@ -288,7 +313,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  transform: translate(5%, -10%);
+  transform: translate(5%, -5%);
   font-size: 20px;
   color: var(--c-primary-100);
   background-color: white;
@@ -302,7 +327,16 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* WALLET PICKER */
+/* Section - Add Category Button */
+.sub-page.category-picker .section-add-category{
+  position: fixed;
+  right: var(--body-padding);
+  bottom: 90px;
+  color: var(--c-primary-100);
+  font-size: 50px;
+}
+
+/* =====================================   SUB PAGE - WALLET PICKER */
 .sub-page.wallet-picker li {
   position: relative;
   padding: 0 var(--body-padding);
@@ -352,3 +386,30 @@
 .sub-page.wallet-picker li:not(.selected) i {
   display: none;
 }
+
+/* =====================================   SUB PAGE ICON PICKER */
+.sub-page.icon-picker .body{
+  padding: var(--body-padding);
+}
+
+.sub-page.icon-picker .section-icons{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sub-page.icon-picker .section-icons i{
+  /* flex-grow: 1; */
+  min-width: calc(100% / 5);
+  max-width: 100%;
+  padding: calc(var(--body-padding) * 1);
+  line-height: 0;
+  /* max-width: calc((100% - var(--body-padding) * 6) / 7); */
+}
+
+.sub-page.icon-picker .section-icons i:before{
+  width: 100%;
+}
+
+

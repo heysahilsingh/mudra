@@ -1,16 +1,7 @@
-import { dbCategories, dbTransactions } from "../../../db.js";
-import { appendHTML, closeSubPage, createHTML } from "../../../helper.js";
+import { dbCategories } from "../../../db.js";
+import { appendHTML, closeSubPage, consoleError, createHTML } from "../../../helper.js";
 
 export function subPageCategoryPicker(pObject) {
-  /* IMPORTANT NOTES
-  1. To call this sub page function, use subPageCategoryPicker({}).
-  2. To specify the heading of the page, use {pHeading: "Heading of the page"}.
-  3. It is necessary to specify the mode for initialization of the function {pMode: `either "select" or "edit"`}.
-  //
-  4. If {pMode: "select"}, you can allow selection of multiple categories by adding this property {pSelectMultiple: true}.
-  5. To run callback, use {callback: "your callback function"}
-  6. A callback function will run with an array of selected category(s) whenever any clickable category is being clicked. 
-  */
   if (document.querySelector(".app .app-page")) {
     // Select Parent Page
     const parentPage = document.querySelector(".app .app-page");
@@ -80,6 +71,19 @@ export function subPageCategoryPicker(pObject) {
       const body = (() => {
         const body = createHTML("div", { class: "body" });
 
+        // Section - Add Category Button
+        if (pMode === "edit") {
+          const addCategory = createHTML("i", {
+            class: "section-add-category ph-fill ph-plus-circle",
+          });
+
+          addCategory.addEventListener("click", () => {
+            console.log("add category");
+          });
+
+          appendHTML(addCategory, body);
+        }
+
         // Section Tabs
         const sectionTabs = (() => {
           const sectionTabs = createHTML("section", { class: "section-tabs" });
@@ -101,12 +105,16 @@ export function subPageCategoryPicker(pObject) {
           addTabEventListener(tabIncomes, ["income"]);
 
           // Tab Lend/Borrow
-          const tabLendBorrow = createHTML(
+          const tabLend = createHTML("div", { class: "tab tab-lend" }, "Lend");
+          addTabEventListener(tabLend, ["lend"]);
+
+          // Tab Lend/Borrow
+          const tabBorrow = createHTML(
             "div",
-            { class: "tab tab-lend-borrow" },
-            "Lend/Borrow"
+            { class: "tab tab-borrow" },
+            "Borrow"
           );
-          addTabEventListener(tabLendBorrow, ["lend", "borrow"]);
+          addTabEventListener(tabBorrow, ["borrow"]);
 
           // Event Listener
           function addTabEventListener(tab, type) {
@@ -121,93 +129,156 @@ export function subPageCategoryPicker(pObject) {
             });
           }
 
-          appendHTML([tabExpenses, tabIncomes, tabLendBorrow], sectionTabs);
+          appendHTML(
+            [tabExpenses, tabIncomes, tabLend, tabBorrow],
+            sectionTabs
+          );
           appendHTML(sectionTabs, body);
         })();
 
         // Section - Render data function
-        function renderData(types) {
+        function renderData(pCategoryType) {
           body.querySelector(".section-categories")?.remove();
 
-          // Return data
+          const categories = dbCategories[pCategoryType];
+          let data = [];
           let returnArray = [];
 
-          const sectionCategories = createHTML("section", {
-            class: "section-categories",
-          });
+          // Section - Categories
+          const sectionCategories = (() => {
+            const sectionCategories = createHTML("section", {
+              class: "section-categories",
+            });
 
-          // Iterate over "types" parameter
-          types.forEach((type) => {
-            const categories = dbCategories[type];
-
-            categories.forEach((category) => {
-              if (!category.isChild) {
-                // Create wrapper
+            // Build Node for section-category
+            categories.forEach((parentCategory) => {
+              if (!parentCategory.isChild) {
+                // Create category parent HTML elements
                 const wrapper = createHTML("ul", { class: "category" });
-
-                // Create Parent Category
                 const categoryParent = createHTML(
                   "div",
                   { class: "category-parent" },
-                  category.name
+                  parentCategory.name
                 );
                 const categoryParentIcon = createHTML("i", {
-                  class: `icon icon-${category.icon}`,
+                  class: `icon ${parentCategory.icon}`,
                 });
 
-                // Add .selected class if this category id is exists in pPreSelected[]
-                if (
-                  pPreSelected &&
-                  pPreSelected.some((selected) => selected === category.id)
-                ) {
-                  categoryParent.classList.add("selected");
-                  returnArray.push({ ...category });
-                }
-
-                // Append Parent category in wrapper
                 appendHTML(categoryParentIcon, categoryParent);
                 appendHTML(categoryParent, wrapper);
+                appendHTML(wrapper, sectionCategories);
 
-                // Check for any chldCategory presence.
+                // Find child categories
                 const childCategories = categories.filter(
-                  (childCategory) => childCategory.parentId === category.id
+                  (childCategory) =>
+                    childCategory.parentId === parentCategory.id
                 );
 
-                // If childCategories does exists
+                // If child exists
                 if (childCategories.length > 0) {
-                  // Create Child Category
+                  // Create category children HTML elements
                   const categoryChildrenWrapper = createHTML("div", {
                     class: "category-children",
                   });
 
-                  childCategories.forEach((childCategory) => {
+                  // Create an array to hold child category data
+                  const childData = childCategories.map((childCategory) => {
                     const categoryChild = createHTML(
                       "li",
                       {
-                        class: `category-child icon icon-${childCategory.icon}`,
+                        class: "category-child",
                       },
                       childCategory.name
                     );
 
+                    const categoryChildIcon = createHTML("i", {
+                      class: `icon ${childCategory.icon}`,
+                    });
+
+                    appendHTML(categoryChildIcon, categoryChild);
                     appendHTML(categoryChild, categoryChildrenWrapper);
                     appendHTML(categoryChildrenWrapper, wrapper);
+
+                    return {
+                      childHTML: categoryChild,
+                      childObject: childCategory,
+                    };
+                  });
+
+                  // Create parent category data object with child data
+                  const parentData = {
+                    parentHTML: categoryParent,
+                    parentObject: parentCategory,
+                    child: childData,
+                  };
+
+                  // Add parent data to the main data array
+                  data.push(parentData);
+                }
+                // If child dosen't  exists
+                else {
+                  // Create parent category data object without child data
+                  const parentData = {
+                    parentHTML: categoryParent,
+                    parentObject: parentCategory,
+                  };
+
+                  // Add parent data to the main data array
+                  data.push(parentData);
+                }
+              }
+            });
+
+            // Add class and eventlistener
+            data.forEach((parentCategory) => {
+              // IF MODE === "SELECT"
+              if (pMode === "select") {
+                // ADD ".SELECTED" CLASS IF PPRESELECTED PROVIDED
+                // On childCategory
+                if (parentCategory.child) {
+                  parentCategory.child.forEach((childCategory) => {
+                    if (
+                      pPreSelected &&
+                      pPreSelected.some(
+                        (selected) => selected === childCategory.childObject.id
+                      )
+                    ) {
+                      childCategory.childHTML.classList.add("selected");
+                      returnArray.push(childCategory.childObject);
+                    }
                   });
                 }
-                // If childCategories dosen't exists
+                // On parentCategory
                 else {
-                  // Add Event Listener
-                  // If multipleSelection is allowed
-                  if (pSelectMultiple && pSelectMultiple === true) {
-                    categoryParent.addEventListener("click", () => {
+                  if (
+                    pPreSelected &&
+                    pPreSelected.some(
+                      (selected) => selected === parentCategory.parentObject.id
+                    )
+                  ) {
+                    parentCategory.parentHTML.classList.add("selected");
+                    returnArray.push(parentCategory.parentObject);
+                  }
+                }
+
+                // ADD CLICK EVENT LISTENER
+                // If pSelectMultiple is provided and true
+                if (pSelectMultiple && pSelectMultiple === true) {
+                  // On parent category who don't have any child
+                  if (!parentCategory.child) {
+                    const elementHTML = parentCategory.parentHTML;
+                    const elementObject = parentCategory.parentObject;
+
+                    elementHTML.addEventListener("click", () => {
                       // Toggle class of parent category HTML
-                      categoryParent.classList.toggle("selected");
+                      elementHTML.classList.toggle("selected");
 
                       // Add/Remove this parent category object from returnArray[]
                       if (returnArray.length > 0) {
                         let found = false;
                         // Check if this parent category object exists in returnArray[] or not.
                         for (const value of returnArray) {
-                          if (value.id === category.id) {
+                          if (value.id === elementObject.id) {
                             found = true;
                             break;
                           }
@@ -215,39 +286,93 @@ export function subPageCategoryPicker(pObject) {
 
                         // If not exists, then add
                         if (!found) {
-                          returnArray.push(category);
+                          returnArray.push(elementObject);
                         }
                         // If exists, then remove
                         else {
                           returnArray = returnArray.filter(
-                            (value) => value.id !== category.id
+                            (value) => value.id !== elementObject.id
                           );
                         }
                       } else {
-                        returnArray.push({ ...category });
+                        returnArray.push(elementObject);
                       }
 
                       // Ensure to have atleast one selected li
                       const selectedLi = sectionCategories.querySelectorAll(
-                        "ul.category .selected"
+                        ".section-categories .selected"
                       );
                       if (selectedLi.length === 0) {
-                        // If no <li> elements are selected, add the "selected" class to the current <li>
-                        categoryParent.classList.add("selected");
-                        returnArray.push({ ...category });
+                        // If no category is selected, add the ".selected" class to the current elmementHTML
+                        elementHTML.classList.add("selected");
+                        returnArray.push(elementObject);
                       }
 
-                      returnArray.push({ ...category });
                       console.log(returnArray);
                     });
                   }
-                  // If multipleSelection not allowed
-                  else {
-                    categoryParent.addEventListener("click", () => {
+                  // On child category
+                  else if (parentCategory.child) {
+                    parentCategory.child.forEach((child) => {
+                      const elementHTML = child.childHTML;
+                      const elementObject = child.childObject;
+
+                      elementHTML.addEventListener("click", () => {
+                        // Toggle class of parent category HTML
+                        elementHTML.classList.toggle("selected");
+
+                        // Add/Remove this parent category object from returnArray[]
+                        if (returnArray.length > 0) {
+                          let found = false;
+                          // Check if this parent category object exists in returnArray[] or not.
+                          for (const value of returnArray) {
+                            if (value.id === elementObject.id) {
+                              found = true;
+                              break;
+                            }
+                          }
+
+                          // If not exists, then add
+                          if (!found) {
+                            returnArray.push(elementObject);
+                          }
+                          // If exists, then remove
+                          else {
+                            returnArray = returnArray.filter(
+                              (value) => value.id !== elementObject.id
+                            );
+                          }
+                        } else {
+                          returnArray.push(elementObject);
+                        }
+
+                        // Ensure to have atleast one selected li
+                        const selectedLi = sectionCategories.querySelectorAll(
+                          ".section-categories .selected"
+                        );
+                        if (selectedLi.length === 0) {
+                          // If no category is selected, add the ".selected" class to the current elmementHTML
+                          elementHTML.classList.add("selected");
+                          returnArray.push(elementObject);
+                        }
+
+                        console.log(returnArray);
+                      });
+                    });
+                  }
+                }
+                // If pSelectMultiple not provided
+                else {
+                  // On parent category who don't have any child
+                  if (!parentCategory.child) {
+                    const elementHTML = parentCategory.parentHTML;
+                    const elementObject = parentCategory.parentObject;
+
+                    elementHTML.addEventListener("click", () => {
                       // Remove the "selected" class from any existing category element
                       const selectedCategory =
                         sectionCategories.querySelectorAll(
-                          "ul.category .selected"
+                          ".section-categories .selected"
                         );
 
                       if (selectedCategory.length > 0) {
@@ -255,20 +380,66 @@ export function subPageCategoryPicker(pObject) {
                           ele.classList.remove("selected")
                         );
                       }
-                      categoryParent.classList.add("selected");
+                      elementHTML.classList.add("selected");
 
                       // Push this category in returArray[]
-                      returnArray = [{ ...category }];
+                      returnArray = [elementObject];
                       console.log(returnArray);
                     });
                   }
+                  // On child category
+                  else if (parentCategory.child) {
+                    parentCategory.child.forEach((child) => {
+                      const elementHTML = child.childHTML;
+                      const elementObject = child.childObject;
+
+                      elementHTML.addEventListener("click", () => {
+                        // Remove the "selected" class from any existing category element
+                        const selectedCategory =
+                          sectionCategories.querySelectorAll(
+                            ".section-categories .selected"
+                          );
+
+                        if (selectedCategory.length > 0) {
+                          selectedCategory.forEach((ele) =>
+                            ele.classList.remove("selected")
+                          );
+                        }
+                        elementHTML.classList.add("selected");
+
+                        // Push this category in returArray[]
+                        returnArray = [elementObject];
+                        console.log(returnArray);
+                      });
+                    });
+                  }
+                }
+              }
+
+              // IF MODE === "EDIT"
+              else if (pMode === "edit") {
+                // Add event listener on all parentCategory
+                if (parentCategory.parentObject.canEdit === false) {
+                  parentCategory.parentHTML.classList.add("default");
+                } else {
+                  parentCategory.parentHTML.addEventListener("click", () => {
+                    console.log(parentCategory.parentObject);
+                  });
                 }
 
-                // Append wraper to sectionCategories
-                appendHTML(wrapper, sectionCategories);
+                // Add event listener on all childCategory
+                if (parentCategory.child) {
+                  parentCategory.child.forEach((child) => {
+                    child.childHTML.addEventListener("click", () => {
+                      console.log(child.childObject);
+                    });
+                  });
+                }
               }
             });
-          });
+
+            return sectionCategories;
+          })();
 
           appendHTML(sectionCategories, body);
         }

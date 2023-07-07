@@ -69,7 +69,7 @@ export function subPageWalletPicker(pObject) {
             if (wallet.isActive === true) {
               // HTML li
               const li = createHTML("li", {
-                class: `wallet icon icon-${wallet.icon}`,
+                class: `wallet icon ${wallet.icon}`,
                 id: wallet.id,
                 status: wallet.status,
               });
