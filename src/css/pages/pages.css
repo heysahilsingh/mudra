@@ -1,0 +1,226 @@
+/* ======================================= PAGE - DASHBOARD ======================================= */
+/* HEADER */
+.page-dashboard .header :is(.row-1, .row-2) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-dashboard .header .row-1 {
+    font: var(--font-l);
+    font-weight: 400;
+}
+
+.page-dashboard .header .row-2 {
+    margin-top: var(--body-padding);
+    border-radius: 10px;
+    padding: var(--body-padding);
+    background-color: var(--c-white-100);
+    color: var(--c-grey);
+
+}
+
+.page-dashboard .header .row-2 .report {
+    color: var(--c-black-40);
+}
+
+.page-dashboard .header .row-2 .ammount {
+    font: var(--font-xl);
+    line-height: 1;
+    margin: calc(var(--body-padding) * 0.5) 0 -2px;
+    display: block;
+}
+
+.page-dashboard .header .row-2 .ammount:after{
+    content: " " var(--currency);
+}
+
+.page-dashboard .header .row-2 .ammount.positive {
+    color: var(--c-green-100);
+}
+
+.page-dashboard .header .row-2 .ammount.negative {
+    color: var(--c-red-100);
+}
+
+.page-dashboard .header .row-2>i {
+    font: var(--font-xl);
+    line-height: 1;
+    color: var(--c-black-30);
+    margin-right: var(--body-padding);
+}
+
+/* BODY */
+.page-dashboard section {
+    border-top: var(--border-bold);
+    background-color: var(--c-white-100);
+    padding: var(--body-padding);
+}
+
+.page-dashboard .section-heading {
+    padding-bottom: var(--body-padding);
+}
+
+.page-dashboard .section-wrapper button {
+    margin: var(--body-padding) 0 0 auto;
+}
+
+/* ======================================= PAGE - ADD TRANSACTION ======================================= */
+.page-add .sub-page-wrapper .header> :is(:nth-child(1), :nth-child(3)) {
+    /* display: none; */
+    visibility: hidden;
+}
+
+.page-add .sub-page-wrapper {
+    animation: none !important;
+}
+
+/* ======================================= PAGE - WALLETS ======================================= */
+.page-wallets .header {
+    text-align: center;
+}
+
+.page-wallets section {
+    background-color: var(--c-white-100);
+    border-bottom: var(--border-bold);
+}
+
+.page-wallets .section-total-balance{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--body-padding);
+    font-weight: 600;
+    padding: var(--body-padding);
+}
+
+.page-wallets .section-total-balance:before{
+    content: "Total balance:";
+    color: var(--c-black-90) !important;
+}
+
+.page-wallets section:not(.section-total-balance) .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    padding: var(--body-padding);;
+    border-bottom: solid 1px var(--c-black-30);
+}
+
+.page-wallets section:not(.section-total-balance) .heading:after {
+    content: attr(balance) " " var(--currency);
+}
+
+.page-wallets section .heading {
+    color: var(--c-black-100);
+}
+
+.page-wallets section:not(.section-total-balance) .heading[balanceStatus="positive"]:after{
+    color: var(--c-green-100);
+}
+
+.page-wallets section:not(.section-total-balance) .heading[balanceStatus="negative"]:after{
+    color: var(--c-red-100);
+}
+
+/* Wallet row */
+.page-wallets .wallet-row{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--body-padding);
+}
+
+.page-wallets .wallet-row:after {
+    content: "\ea00";
+    position: absolute;
+    right: var(--body-padding);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-black-30);
+    font-size: 20px;
+    border-radius: 50%;
+    font-family: "Phosphor-Bold" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page-wallets .wallet-row .info{
+    flex-grow: 1;
+    padding: var(--body-padding);
+    border-top: var(--border);
+}
+
+.page-wallets .wallet-row:first-child .info{
+    border-top: none;
+}
+
+.page-wallets .wallet-row .wallet-name {
+    text-transform: capitalize;
+    padding-bottom: 2px;
+}
+
+.page-wallets .wallet-row .wallet-balance:after{
+    content: " " var(--currency)
+}
+
+
+/* Section - Add Wallet Button */
+.page-wallets .section-add-wallet {
+    position: fixed;
+    right: var(--body-padding);
+    bottom: 90px;
+    color: var(--c-primary-100);
+    font-size: 50px;
+    background-color: transparent;
+}
+
+
+/* ======================================= PAGE - SETTINGS ======================================= */
+.page-settings .header{
+    text-align: center;
+}
+
+.page-settings section{
+    padding: 0 var(--body-padding) calc(var(--body-padding) * 3);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-settings .section-heading{
+    margin-bottom: var(--body-padding);
+    color: var(--c-black-40);
+    line-height: 100%;
+}
+
+.page-settings .section-container{
+    background-color: var(--c-white-100);
+    border-radius: 15px;
+    padding: 0 var(--body-padding);
+}
+
+.page-settings .setting{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--body-padding);
+    border-bottom: var(--border);
+    padding: var(--body-padding) 0;
+}
+
+.page-settings .setting-icon{
+    font-size: 25px;
+    color: var(--c-black-50);
+}
+
+.page-settings .setting-name{
+    flex-grow: 1;
+    line-height: 100%;
+}
