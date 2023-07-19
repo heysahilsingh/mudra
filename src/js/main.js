@@ -12,18 +12,18 @@ export const dialogBoxWrapperHTML = dialogBoxHTML.querySelector(
 );
 
 // Detect user's theme preference
-// if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-//   dbAppSettings.darkMode = true;
-//   updateAppColors();
-// }
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  dbAppSettings.darkMode = true;
+  updateAppColors();
+}
 
-// const colorSchemeChangeHandler = event => {
-//   dbAppSettings.darkMode = event.matches;
-//   updateAppColors();
-// };
+const colorSchemeChangeHandler = event => {
+  dbAppSettings.darkMode = event.matches;
+  updateAppColors();
+};
 
-// const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-// colorSchemeMediaQuery.addEventListener('change', colorSchemeChangeHandler);
+const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+colorSchemeMediaQuery.addEventListener('change', colorSchemeChangeHandler);
 
 // Add CSS variables
 updateAppUserCurrency();
