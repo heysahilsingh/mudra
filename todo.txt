@@ -1,0 +1,3 @@
+1. debug datepicker for ios.
+2. fix entry tabs in subpagecategorypicker
+3. total income and expense is not calculated correct in subPageTransactionsHistory
