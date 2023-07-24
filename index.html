@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mudra Keeper - Your Money Tracker</title>
+  <meta name="description" content="Mudra Keeper - Your Money Tracker">
+  <meta property="og:site_name" content="Mudra Keeper - Your Money Tracker">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mudra Keeper - Your Money Tracker">
+  <meta property="og:description" content="Mudra Keeper - Your Money Tracker">
+  <meta property="og:image" content="./media/favicon/favicon-512.png">
+  <link rel="icon" type="image/x-icon" href="./media/favicon/favicon-512.png">
+  <link rel="icon" type="image/x-icon" href="./media/favicon/favicon-192.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./src/css/theme.css" />
+  <link rel="stylesheet" href="./src/css/app.css" />
+  <link rel="stylesheet" href="./src/css/icons.css">
+  <link rel="stylesheet" href="./src/css/dialogbox.css" />
+  <link rel="stylesheet" href="./src/css/pages.css">
+  <link rel="stylesheet" href="./src/css/sub-page.css">
+
+  <!-- PWA - Service wroker JS -->
+  <link rel="manifest" href="manifest.json">
+  <script> if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js"); </script>
+</head>
+
+<body>
+  <!-- Site Content -->
+  <div class="main">
+    <!-- Application -->
+    <div class="app"></div>
+    <!-- Dialog Box -->
+    <div class="dialog-box">
+      <div class="dialog-box-wrapper"></div>
+    </div>
+    <!-- Message -->
+    <div class="pop-message">
+      <div class="icons">
+        <i class="icon-error ph-bold ph-warning-circle"></i>
+        <i class="icon-warning ph-bold ph-warning-circle"></i>
+        <i class="icon-success ph-bold ph-check-circle"></i>
+        <i class="icon-info ph-bold ph-question"></i>
+      </div>
+      <div class="message"></div>
+      <i class="close ph ph-x"></i>
+    </div>
+  </div>
+  <!-- Main Script File -->
+  <script type="module" src="./src/js/main.js"></script>
+  <!-- <script type="module" src="./index.js"></script> -->
+  <!-- Phosphor Icons Library -->
+  <link rel="stylesheet" href="./src/phosphor/bold/style.css">
+  <link rel="stylesheet" href="./src/phosphor/fill/style.css">
+  <link rel="stylesheet" href="./src/phosphor/regular/style.css">
+  <!-- Du Date Picker -->
+  <script src="./src/dudatepicker/duDatepicker.js"></script>
+  <link rel="stylesheet" href="./src/dudatepicker/duDatepicker.css">
+  <!-- Chart -->
+  <script src="./src/chartjs/chart.js"></script>
+</body>
+
+</html>

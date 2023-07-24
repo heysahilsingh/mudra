@@ -1,0 +1,31 @@
+{
+    "name": "Mudra Keeper - Your Money Tracker",
+    "description": "Mudra Keeper - Your Money Tracker",
+    "short_name": "Mudra Keeper",
+    "icons": [
+      {
+        "src": "./media/favicon/favicon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "./media/favicon/favicon-384.png",
+        "type": "image/png",
+        "sizes": "384x384"
+      },
+      {
+        "src": "./media/favicon/favicon-256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "./media/favicon/favicon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "./index.html",
+    "background_color": "#000000",
+    "display": "standalone",
+    "theme_color": "#35a1fe"
+  }
