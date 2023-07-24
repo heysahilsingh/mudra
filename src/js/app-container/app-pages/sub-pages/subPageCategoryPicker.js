@@ -2,8 +2,6 @@ import { dbCategories } from "../../../db.js";
 import { appendHTML, closeSubPage, consoleError, createHTML, popMsg, } from "../../../helper.js";
 import { subPageAddCategory } from "./subPageAddCategory.js";
 
-setTimeout(() => subPageCategoryPicker({pMode: "edits"}))
-
 export function subPageCategoryPicker(pObject) {
   /* IMPORTANT NOTES TO BE NOTED
   1. To call this function, subPageCategoryPicker({}).
