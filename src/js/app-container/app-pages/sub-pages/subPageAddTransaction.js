@@ -131,6 +131,9 @@ export function subPageAddTransaction(pObject) {
                     })
                 })
 
+                                console.log([formatDate(addTransaction.date).date])
+
+
                 appendHTML([transactionDateIcon, transactionDateText], transactionDate)
 
 
