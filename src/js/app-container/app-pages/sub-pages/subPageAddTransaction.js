@@ -120,7 +120,7 @@ export function subPageAddTransaction(pObject) {
                 transactionDate.addEventListener("click", () => {
                     compDatePicker({
                         type: "single",
-                        dates: [formatDate(addTransaction.date).date],
+                        // dates: [formatDate(addTransaction.date).date],
                         callback: (value) => {
                             transactionDateText.textContent = formatDate(value._date).date;
                             transactionDateText.setAttribute("time", formatDate(new Date()).time)
