@@ -466,11 +466,13 @@
 
 /* Section - Add Category Button */
 .sub-page.category-picker .section-add-category {
-  position: fixed;
-  right: var(--body-padding);
-  bottom: 90px;
-  color: var(--c-primary-100);
-  font-size: 60px;
+    bottom: 90px;
+    color: var(--c-primary-100);
+    font-size: 60px;
+    width: 100%;
+    max-width: var(--max-screen-width);
+    padding: 0 var(--body-padding);
+    text-align: right;
 }
 
 /* =====================================   SUB PAGE PARENT CATEGORY PICKER */
