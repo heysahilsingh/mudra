@@ -466,6 +466,7 @@
 
 /* Section - Add Category Button */
 .sub-page.category-picker .section-add-category {
+  position: fixed;
     bottom: 90px;
     color: var(--c-primary-100);
     font-size: 60px;
