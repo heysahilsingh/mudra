@@ -1,6 +1,4 @@
 # Mudra Keeper
-![Mudra Keeper Logo](link-to-your-logo.png)
-
 Introducing Mudra Keeper, an intuitive web application designed to assist users in effortlessly tracking their daily incomes and expenses. With a user-friendly interface, Mudra Keeper simplifies the process of adding and managing financial transactions.
 
 Our vision for Mudra Keeper was inspired by the essence of [MISA MoneyKeeper](https://sothuchi.misa.vn/en/home/) app's user interface, but it's important to note that we have developed it entirely from the ground up, ensuring originality and respecting intellectual property rights.
