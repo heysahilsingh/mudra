@@ -15,8 +15,13 @@ Our vision for Mudra Keeper was inspired by the essence of [MISA MoneyKeeper](ht
 You can check out a live demo [here](https://heysahilsingh.github.io/mudra/).
 
 ## Screenshots
-![Screenshot 1](screenshot1.png)
-![Screenshot 2](screenshot2.png)
+![Dashboard - Dark Mode](https://github.com/heysahilsingh/mudra/blob/main/media/screenshots/pageHome%20-%20Dark.png?raw=true)
+![Dashboard - Light Mode](https://github.com/heysahilsingh/mudra/blob/main/media/screenshots/pageHome%20-%20Light.png?raw=true)
+
+![Wallets](https://github.com/heysahilsingh/mudra/blob/main/media/screenshots/pageWalets.png?raw=true)
+![Settings](https://github.com/heysahilsingh/mudra/blob/main/media/screenshots/pageSettings.png?raw=true)
+![TransactionHistory](https://github.com/heysahilsingh/mudra/blob/main/media/screenshots/pageTransactionHistory.png?raw=true)
+![AddTransaction](https://github.com/heysahilsingh/mudra/blob/main/media/screenshots/pageAddTransaction.png?raw=true)
 
 ## Dependencies
 Mudra Keeper relies on the following helper libraries:
