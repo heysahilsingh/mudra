@@ -43,7 +43,8 @@ export function compTransactionRow(pObject) {
       const detail1 = createHTML("div", { class: "detail-1" });
       const transactionCategory = createHTML("p", { class: "transaction-category" }, category?.name);
       const transactionDescription = createHTML("p", { class: "transaction-description" }, transaction.description);
-      const transactionDate = createHTML("p", { class: "transaction-date" }, formatDate(transaction.date).date);
+      // const transactionDate = createHTML("p", { class: "transaction-date" }, formatDate(transaction.date).date);
+      const transactionDate = createHTML("p", { class: "transaction-date" }, formatDate(transaction.date).saveDate);
 
       appendHTML([transactionCategory, transactionDescription, transactionDate], detail1);
 

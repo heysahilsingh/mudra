@@ -107,8 +107,11 @@ export function subPageAddTransaction(pObject) {
                 // Transaction Description
                 const transactionDescription = createHTML("div", { class: "transaction-description" });
                 const transactionDescriptionIcon = createHTML("i", { class: "ph-bold ph-text-align-left" });
-                const transactionDescriptionInput = createHTML("input", { type: "text", placeholder: "Description" });
-                transactionDescriptionInput.value = addTransaction.description;
+                const transactionDescriptionInput = createHTML("input", { type: "text", value: addTransaction.description, placeholder: "Description" });
+
+                transactionDescriptionInput.addEventListener("change", (e) => {
+                  addTransaction.description = e.target.value
+                })
 
                 appendHTML([transactionDescriptionIcon, transactionDescriptionInput], transactionDescription)
 
