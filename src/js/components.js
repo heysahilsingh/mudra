@@ -119,7 +119,7 @@ export function compTransactionsRow(pObject) {
         const data = createHTML("div", { class: "data expanded" });
 
         // Append transaction Row
-        const sortedTransactionsArray = sortTransaction(transactionsArray, "date", "asc");
+        const sortedTransactionsArray = sortTransaction(transactionsArray, "date", "desc");
 
         sortedTransactionsArray.forEach((transaction) => {
           // Create HTML
