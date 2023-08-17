@@ -17,7 +17,7 @@ export function pageDashboard() {
 
       // Row 1
       const row1 = createHTML("div", { class: "row-1" });
-      const userName = createHTML("span", { class: "user-name" }, `Hi ${dbAppSettings.userName}!`);
+      const userName = createHTML("span", { class: "user-name" }, `Hi ${dbAppSettings.userName}! Sa`);
       const refreshBtn = createHTML("i", { class: "ph-bold ph-arrows-clockwise" });
 
       refreshBtn.addEventListener("click", () => popMsg("Refreshing app...", "warning").then(() => location.reload()));
