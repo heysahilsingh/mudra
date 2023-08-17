@@ -334,8 +334,9 @@ export function subPageCategoryPicker(pObject) {
           // Section - Add Category Button
           body.querySelector(".section-add-category")?.remove();
 
-          const addCategory = createHTML("i", { class: "section-add-category ph-fill ph-plus-circle" });
-          addCategory.addEventListener("click", () => {
+          const addCategory = createHTML("div", { class: "section-add-category" });
+          const addCategoryIcon = createHTML("i", { class: "ph-fill ph-plus-circle" });
+          addCategoryIcon.addEventListener("click", () => {
             subPageAddCategory({
               pCategoryType: pCategoryEntryType,
               pCallback: () => {
@@ -344,6 +345,7 @@ export function subPageCategoryPicker(pObject) {
             });
           });
 
+          appendHTML(addCategoryIcon, addCategory)
           appendHTML(addCategory, body);
           appendHTML(sectionCategories, body);
           
